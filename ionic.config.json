@@ -1,7 +1,8 @@
 {
   "name": "calculoHoraExtraReal",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
