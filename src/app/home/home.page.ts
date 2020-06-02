@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  real: string = 'R$ ';
+  routerInfo: string = '/info';
+
   calculo: Calculo = {
     salarioBruto: null,
     jornadaMensal: null,
@@ -20,17 +21,15 @@ export class HomePage {
     qtdHorasExtras: null
   }
 
-  resultadoUnitario: string;
-  resultadoTotal: string;
+  resultadoUnitario: number;
+  resultadoTotal: number;
 
-  constructor(private calculoService: CalculoService, public alertController: AlertController, private router : Router) { }
+  constructor(private calculoService: CalculoService, public alertController: AlertController, private router: Router) { }
 
   calcularHoraExtra(): void {
     if (this.validaCampos(this.calculo)) {
-      this.resultadoUnitario = this.calculoService.valorHoraExtra(this.calculo).toFixed(2);
-      this.resultadoTotal = (this.calculo.qtdHorasExtras * parseFloat(this.resultadoUnitario)).toFixed(2);
-      this.resultadoUnitario = this.real + this.resultadoUnitario;
-      this.resultadoTotal = this.real + this.resultadoTotal;
+      this.resultadoUnitario = this.calculoService.valorHoraExtra(this.calculo);
+      this.resultadoTotal = (this.calculo.qtdHorasExtras * this.resultadoUnitario);
     } else {
       this.presentAlert();
     }
@@ -62,7 +61,7 @@ export class HomePage {
     this.resultadoUnitario = null;
   }
 
-  pageInfo(): void{
-    this.router.navigate(['/info']);
+  pageInfo(): void {
+    this.router.navigate([this.routerInfo]);
   }
 }

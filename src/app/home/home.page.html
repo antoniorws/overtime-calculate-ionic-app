@@ -34,12 +34,12 @@
 
   <ion-item>
     <ion-label>Valor da Hora Extra:</ion-label>
-    <ion-label color="success">{{resultadoUnitario}}</ion-label>
+    <ion-label color="success">{{resultadoUnitario | currency: 'BRL'}}</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label>Total de Horas Extras:</ion-label>
-    <ion-label color="success">{{resultadoTotal}}</ion-label>
+    <ion-label color="success">{{resultadoTotal | currency: 'BRL'}}</ion-label>
   </ion-item>
 
 </ion-content>
