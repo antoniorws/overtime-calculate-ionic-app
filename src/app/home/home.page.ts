@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { isNumber } from 'util';
 import { CalculoService } from '../service/calculo.service';
 import { Calculo } from '../model/calculo.model';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,11 @@ export class HomePage {
   resultadoUnitario: number;
   resultadoTotal: number;
 
-  constructor(private calculoService: CalculoService, public alertController: AlertController, private router: Router) { }
+  constructor(private calculoService: CalculoService, public alertController: AlertController, private router: Router,
+    private admobFree: AdMobFree) {
+    this.showBanner();
+
+  }
 
   calcularHoraExtra(): void {
     if (this.validaCampos(this.calculo)) {
@@ -64,4 +68,20 @@ export class HomePage {
   pageInfo(): void {
     this.router.navigate([this.routerInfo]);
   }
+
+  showBanner(): void {
+    const bannerConfig: AdMobFreeBannerConfig = {
+      id: "ca-app-pub-4420839482116106/3564962143",
+      autoShow: true,
+      isTesting: true
+    };
+    this.admobFree.banner.config(bannerConfig);
+
+    this.admobFree.banner.prepare().then(() => {
+
+    }).catch(e => {
+      console.log(e);
+    })
+  }
+
 }
