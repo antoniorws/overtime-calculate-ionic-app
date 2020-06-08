@@ -69,11 +69,11 @@ export class HomePage {
     this.router.navigate([this.routerInfo]);
   }
 
-  showBanner(): void {
-    const bannerConfig: AdMobFreeBannerConfig = {
+  showBanner() {
+    let bannerConfig: AdMobFreeBannerConfig = {
       id: "ca-app-pub-4420839482116106/3564962143",
       autoShow: true,
-      isTesting: true
+      //isTesting: true
     };
     this.admobFree.banner.config(bannerConfig);
 
