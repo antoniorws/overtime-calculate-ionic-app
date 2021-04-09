@@ -1,6 +1,6 @@
 # calculo-de-Hora-Extra-app
 
-A simple app to calculate overtime.
+A simple app to calculate overtime in Brazil.
 <br/>
 <br/>
 Available only Play Store:
