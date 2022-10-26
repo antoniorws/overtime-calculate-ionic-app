@@ -24,8 +24,8 @@ https://play.google.com/store/apps/details?id=melhorapp.horas.extras
 
 ### Prerequisites
  - Node.js, Cordova and Ionic.<br/>
-Clone this project and run it with ionic.<br/>
-Read the ionic documentation for more information.<br/><br/>
+ - Clone this project and run it with ionic.<br/>
+ - Read the ionic documentation for more information.<br/><br/>
 
 ## Built With
 Ionic - https://ionicframework.com/
