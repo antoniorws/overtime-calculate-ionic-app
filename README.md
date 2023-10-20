@@ -13,13 +13,6 @@ you don't have to worry about how to fill in the fields in the app, in our app w
 <br/>
 <br/>
 
-## Installers
-Available only Play Store:
-<br/>
-https://play.google.com/store/apps/details?id=melhorapp.horas.extras
-<br/>
-<br/>
-
 ## Run Locally
 
 ### Prerequisites
